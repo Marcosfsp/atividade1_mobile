@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Login Demo',
+      title: 'App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     if (username.isEmpty || password.isEmpty) {
       _showSnackBar('Usuário e senha não podem estar vazios.');
-    } else if (username == 'user' && password == 'password') {
+    } else if (username == 'Marcos' && password == 'senha') {
       Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => WelcomeScreen(username: username),
       ));
@@ -71,8 +71,8 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircleAvatar(
-                radius: 50,
-                backgroundImage: AssetImage('assets/placeholder.png'), // Substitua com a imagem desejada
+                radius: 100,
+                backgroundImage: AssetImage('assets/icon.png'), 
               ),
               SizedBox(height: 20),
               TextField(
@@ -121,7 +121,7 @@ class WelcomeScreen extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          'Bem-vindo $username',
+          'Bem-vindo, $username!',
           style: TextStyle(fontSize: 24),
         ),
       ),
